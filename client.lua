@@ -10,7 +10,7 @@ RegisterCommand("fh4speed", function(_, args)
 	ToggleDisplay()
 end, false)
 
-RegisterKeyMapping('fh4speed', 'Enable or disable speedometer', 'keyboard', 'f10')
+-- RegisterKeyMapping('fh4speed', 'Enable or disable speedometer', 'keyboard', 'f10')
 
 Citizen.CreateThread(function()
 	while true do
