@@ -14,7 +14,7 @@ RegisterKeyMapping('fh4speed', 'Enable or disable speedometer', 'keyboard', 'f10
 
 Citizen.CreateThread(function()
 	while true do
-		Wait(50)
+		Wait(0)
 
 		playerPed = GetPlayerPed(-1)
 		
