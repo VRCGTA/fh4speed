@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Oswald:wght@200..700&display=swap');
+
+
+.App {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  padding: 3vh 4vw 5vh 2vw;
+}
+
+.meterContainer {
+  display: block;
+  position: relative;
+  opacity: 0;
+  transition: .2s all;
+}
+
+.showMeter {
+  opacity: 1 !important;
+}
+
+.cls1, .cls2, .cls3 {
+  stroke: rgba(255,255,255,.7);
+}
+
+.statOn {
+  opacity: 1 !important;
+}
+
+.cls1, .cls2, .cls3, .cls4, .cls5, .cls6 {
+  fill: none;
+  stroke-miterlimit: 10;
+}
+
+.cls1, .cls6 {
+  stroke-width: 3px;
+}
+
+.cls2 {
+  stroke-width: 4px;
+}
+
+.cls2, .cls3, .cls7, .cls4, .cls8, .cls5, .cls6 {
+  opacity: .8;
+}
+
+.cls3, .cls4 {
+  stroke-width: 8px;
+}
+
+.cls7, .cls9 {
+  fill: #fff;
+}
+
+.cls7, .cls9, .cls10 {
+  stroke-width: 0px;
+}
+
+.cls4 {
+  stroke: #ce3152;
+}
+
+.cls5 {
+  stroke-width: 7px;
+}
+
+.green {
+  stroke: #05b572;
+}
+
+.red {
+  stroke: #ce3152;
+}
+
+.cls11 {
+  opacity: .4;
+}
+
+.cls10 {
+  fill: #ce3152;
+}
+
+.cls6 {
+  stroke: #fff;
+}
+
+#fh4container {
+  display: flex;
+  height: 35vh;
+  margin-bottom: -10%;
+  position: relative;
+}
+
+#gearContainer {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 600;
+  position: absolute;
+  color: white;
+  font-size: 2.5rem;
+  margin-left: .5%;
+  margin-top: 10.5%;
+  text-align: center;
+  width: 100%;
+  height: 75%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#needle {
+  transform-origin: 253.61px 241.48px;
+}
+
+#speed {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  position: absolute;
+  color: #fff;
+  font-size: 5rem;
+  text-align: right;
+  width: 95%;
+  height: 85%;
+  display: flex;
+  place-content: center flex-end;
+  flex-direction: column;
+  align-content: flex-end;
+}
+
+.kmh {
+  transform: translateX(-2%);
+}

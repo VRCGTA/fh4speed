@@ -2,27 +2,17 @@
 --[[ Author: Akkariin | Github: https://github.com/kasuganosoras/fh4speed ]]--
 --[[ If you like this script, please give me a like on the fivem forum, thanks ]]--
 
-local isHide = false
-
 local carRPM, carSpeed, carGear, carIL, carAcceleration, carHandbrake, carBrakeABS, carLS_r, carLS_o, carLS_h
-
-RegisterCommand("fh4speed", function(_, args)	
-	ToggleDisplay()
-end, false)
-
--- RegisterKeyMapping('fh4speed', 'Enable or disable speedometer', 'keyboard', 'f10')
 
 Citizen.CreateThread(function()
 	while true do
-		Wait(0)
+		Wait(1)
 
 		playerPed = GetPlayerPed(-1)
 		
-		if playerPed and IsPedInAnyVehicle(playerPed) and not isHide then
-			
+		if playerPed and IsPedInAnyVehicle(playerPed) then
 			playerCar = GetVehiclePedIsIn(playerPed, false)
-			
-			if playerCar and GetPedInVehicleSeat(playerCar, -1) == playerPed then
+			if playerCar then
 				local NcarRPM                      = GetVehicleCurrentRpm(playerCar)
 				local NcarSpeed                    = GetEntitySpeed(playerCar)
 				local NcarGear                     = GetVehicleCurrentGear(playerCar)
@@ -64,26 +54,16 @@ Citizen.CreateThread(function()
 						CurrentCarLS_r         = carLS_r,
 						CurrentCarLS_o         = carLS_o,
 						CurrentCarLS_h         = carLS_h,
-						PlayerID               = GetPlayerServerId(GetPlayerIndex())
 					})
 				else
 					Wait(100)
 				end
 			else
-				SendNUIMessage({HideHud = true})
+				SendNUIMessage({ShowHud = false})
 			end
 		else
-			SendNUIMessage({HideHud = true})
+			SendNUIMessage({ShowHud = false})
 			Wait(100)
 		end
 	end
 end)
-
-function ToggleDisplay()
-	if isHide then
-		isHide = false
-	else
-		SendNUIMessage({HideHud = true})
-		isHide = true
-	end
-end
